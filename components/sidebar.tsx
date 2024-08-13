@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
 import { FcHome, FcAbout, FcContacts, FcPrevious } from "react-icons/fc";
+import { RiArrowRightDoubleLine, RiArrowLeftDoubleFill } from "react-icons/ri";
 // Define a type for your icon names
 type IconName = 'FcHome' | 'FcAbout' | 'FcContacts'; // Extend this list with other icon names you use
 
@@ -56,7 +57,7 @@ export default function Sidebar() {
                 <div className="nav__header">
                     <div className="navbar__top cursor-pointer justify-between items-center w-full max-h-12 px-4 py-3 flex">
                         <Link href="/" className={`flex-shrink-0  transition-all duration-300 ease-in-out delay-200 overflow-hidden ${isExpanded ? '' : 'hidden'}`}>FrontendFrolics</Link>
-                        <button className="z-40 bg-[#1f0d0d] rounded-md flex-none justify-center items-center w-[1.4rem] h-[1.4rem] relative" onClick={toggleSidebar}><FcPrevious className="text-white" /></button>
+                        <button className="rounded-md flex justify-center items-center w-[1.4rem] h-[1.4rem] relative" onClick={toggleSidebar}>{isExpanded ? <RiArrowLeftDoubleFill className="text-white" /> : <RiArrowRightDoubleLine className="text-white" />}</button>
                     </div>
                     <hr className="border-dashed border-[#fff3]" />
                 </div>

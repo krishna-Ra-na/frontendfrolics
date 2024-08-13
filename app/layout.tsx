@@ -23,8 +23,8 @@ export default function RootLayout({
         <div className="flex  max-w-none p-5 mx-auto">
           <BackgroundBeams />
           <Sidebar />
-          <div className="main-content w-full ml-10 pt-5 relative">
-            <main className="flex min-h-screen flex-col items-center justify-between p-24 h-[1200px]">
+          <div className="main-content w-full ml-10  relative">
+            <main className="flex min-h-screen flex-col justify-between p-6">
 
               {children}
             </main>

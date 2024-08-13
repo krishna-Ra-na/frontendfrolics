@@ -1,5 +1,6 @@
+"use client"
 import React from "react";
-
+import Breadcrumb from '@/components/breadcrumb';
 
 interface Props {
     children: React.ReactNode;
@@ -8,7 +9,10 @@ interface Props {
 export default function CssanimationLayout({ children }: Props) {
     return (
         <>
-            {children}
+            <div className='flex flex-col gap-4'>
+                <Breadcrumb />
+                {children}
+            </div>
         </>
     );
 }

@@ -1,0 +1,65 @@
+@keyframes shine-animate {
+  0%,
+  35% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  transform: translateX(-100%);
+  animation: shine-animate 2s infinite;
+}
+
+.accordion {
+  /* border: 1px solid #ddd; */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #393939;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #2b2b2b;
+}
+
+.accordion-header + .accordion-content {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding: 0 1rem;
+}
+
+.accordion-content p {
+  margin: 1rem 0;
+  font-size: 12px;
+}
+
+.accordion-header.is-open + .accordion-content {
+  display: block;
+}
