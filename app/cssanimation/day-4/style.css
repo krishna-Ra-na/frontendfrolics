@@ -1,0 +1,44 @@
+.solar-system {
+  position: relative;
+  width: 800px;
+  height: 550px;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgb(255, 204, 0);
+}
+
+.planet {
+  fill: white;
+}
+
+.mercury {
+  fill: #b0b0b0;
+}
+
+.venus {
+  fill: #e7d3a4;
+}
+
+.earth {
+  fill: #2a75bb;
+}
+
+.mars {
+  fill: #d14a28;
+}
+
+.orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -20,12 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#111] text-white`}>
-        <div className="flex  max-w-none p-5 mx-auto">
+        <div className="flex h-screen  max-w-none p-5">
           <BackgroundBeams />
           <Sidebar />
-          <div className="main-content w-full ml-10  relative">
-            <main className="flex min-h-screen flex-col justify-between p-6">
-
+          <div className="main-content w-full ml-10  relative flex-grow overflow-y-auto custom-scrollbar">
+            <main className="flex  flex-col justify-between p-6">
               {children}
             </main>
           </div>

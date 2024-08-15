@@ -29,13 +29,13 @@ const menuItems: MenuItem[] = [
         icon: 'FcHome',
     },
     {
-        label: 'About',
-        url: '/about',
+        label: 'Css Animation',
+        url: '/cssanimation',
         icon: 'FcAbout',
     },
     {
-        label: 'Contact',
-        url: '/contact',
+        label: 'Js Problems',
+        url: '/jsproblems',
         icon: 'FcContacts',
     },
 ];
@@ -53,7 +53,7 @@ export default function Sidebar() {
     return (
         <>
             <div id="sidebar" className={`navbar ${isExpanded ? 'w-64' : 'w-14'
-                } h-full bg-[#292929] min-h-[95vh] max-h-[95vh] sticky transition-all duration-300 ease-in-out  top-5 text-[#eeedf2] flex flex-col rounded-xl overflow-hidden pt-0`} style={{ boxShadow: 'inset 0 0 0 0.4px #ffffff4d' }}>
+                } h-full bg-[#292929]  min-h-[95vh] max-h-[95vh] sticky transition-all duration-300 ease-in-out  top-5 text-[#eeedf2] flex flex-col rounded-xl overflow-hidden pt-0`} style={{ boxShadow: 'inset 0 0 0 0.4px #ffffff4d' }}>
                 <div className="nav__header">
                     <div className="navbar__top cursor-pointer justify-between items-center w-full max-h-12 px-4 py-3 flex">
                         <Link href="/" className={`flex-shrink-0  transition-all duration-300 ease-in-out delay-200 overflow-hidden ${isExpanded ? '' : 'hidden'}`}>FrontendFrolics</Link>
