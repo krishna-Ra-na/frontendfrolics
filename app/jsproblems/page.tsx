@@ -19,6 +19,10 @@ export default function Home() {
             url: 'throttle',
         },
         {
+            label: 'Debounce',
+            url: 'debounce',
+        },
+        {
             label: 'new',
             url: 'new',
         },
