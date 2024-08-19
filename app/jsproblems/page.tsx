@@ -10,6 +10,18 @@ export default function Home() {
             label: 'Flat',
             url: 'flat',
         },
+        {
+            label: 'Validate Brackets',
+            url: 'validatebrackets',
+        },
+        {
+            label: 'Throttle',
+            url: 'throttle',
+        },
+        {
+            label: 'new',
+            url: 'new',
+        },
 
     ];
 

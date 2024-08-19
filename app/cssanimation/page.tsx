@@ -22,7 +22,12 @@ export default function Home() {
             label: 'Day 5',
             url: 'day-5',
         },
+        {
+            label: 'Day 6',
+            url: 'day-6',
+        },
     ];
+
     return (
         <>
             <h2>Css Animation</h2>
