@@ -23,8 +23,16 @@ export default function Home() {
             url: 'debounce',
         },
         {
-            label: 'new',
-            url: 'new',
+            label: 'Is anagram',
+            url: 'isanagram',
+        },
+        {
+            label: 'Find largest',
+            url: 'findlargest',
+        },
+        {
+            label: 'Expenditure Analysis',
+            url: 'expenditureanalysis',
         },
 
     ];

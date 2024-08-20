@@ -38,6 +38,16 @@ const menuItems: MenuItem[] = [
         url: '/jsproblems',
         icon: 'FcContacts',
     },
+    {
+        label: 'Debounce Examples',
+        url: '/debounce-examples',
+        icon: 'FcContacts',
+    },
+    {
+        label: 'Throttle Examples',
+        url: '/throttle-examples',
+        icon: 'FcContacts',
+    },
 ];
 export default function Sidebar() {
 
