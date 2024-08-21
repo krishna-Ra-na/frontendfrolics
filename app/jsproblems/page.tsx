@@ -34,6 +34,14 @@ export default function Home() {
             label: 'Expenditure Analysis',
             url: 'expenditureanalysis',
         },
+        {
+            label: 'Is Palindrome',
+            url: 'palindrome',
+        },
+        {
+            label: 'Count Vowels',
+            url: 'countvowels',
+        },
 
     ];
 
@@ -44,10 +52,10 @@ export default function Home() {
             <h2>Js Problems</h2>
 
             <div className="mt-10">
-                <ul className="flex gap-3  justify-start">
+                <ul className="flex gap-5  justify-start flex-wrap">
                     {pageLinks.map((item, index) => {
                         return (
-                            <li className="" key={index}>
+                            <li className="flex" key={index}>
                                 <Link href={`/jsproblems/${item.url}`} className="bg-[#292929] px-10 py-4 rounded-md hover:bg-[#ffffff0a] hover:shadow-[inset_0_0_0_0.7px_#ffffff1a]">{item.label}</Link>
                             </li>
                         )

@@ -10,33 +10,9 @@ import _ from "lodash";
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 
-const fetchSuggestionsFromAPI = async (searchTerm, setSuggestions) => {
-  if (searchTerm.length > 0) {
-    try {
-      const response = await fetch(
-        // `https://jsonplaceholder.typicode.com/users?name_like=${searchTerm}`
-        `https://www.omdbapi.com/?apikey=ef5a070&s=${searchTerm}&type=movie`
-      );
-      if (!response.ok) {
-        throw new Error("Failed to fetch suggestions");
-      }
-      const data = await response.json();
-      const { Search } = data;
-      setSuggestions(Search);
-    } catch (error) {
-      console.error("Error fetching suggestions:", error);
-      setSuggestions([]);
-    }
-  } else {
-    setSuggestions([]);
-  }
-};
-
 export default function Searchautocomplete() {
   const [searchquery, setSearchquery] = useState("");
-  // console.log(searchquery);
   const [suggestions, setSuggestions] = useState([]);
-  // console.log("sugg", suggestions);
   const fetchSuggestions = useCallback(
     _.debounce(
       (searchTerm) => fetchSuggestionsFromAPI(searchTerm, setSuggestions),
@@ -48,9 +24,67 @@ export default function Searchautocomplete() {
   useEffect(() => {
     fetchSuggestions(searchquery);
   }, [searchquery, fetchSuggestions]);
+
+  const fetchSuggestionsFromAPI = async (searchTerm, setSuggestions) => {
+    if (searchTerm.length > 0) {
+      try {
+        const response = await fetch(
+          // `https://jsonplaceholder.typicode.com/users?name_like=${searchTerm}`
+          `https://www.omdbapi.com/?apikey=ef5a070&s=${searchTerm}&type=movie`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch suggestions");
+        }
+        const data = await response.json();
+        const { Search } = data;
+        setSuggestions(Search);
+      } catch (error) {
+        console.error("Error fetching suggestions:", error);
+        setSuggestions([]);
+      }
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const codeString = `const [searchquery, setSearchquery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const fetchSuggestions = useCallback(
+    _.debounce(
+      (searchTerm) => fetchSuggestionsFromAPI(searchTerm, setSuggestions),
+      2500
+    ),
+    []
+  );
+
+  useEffect(() => {
+    fetchSuggestions(searchquery);
+  }, [searchquery, fetchSuggestions]);
+
+  const fetchSuggestionsFromAPI = async (searchTerm, setSuggestions) => {
+    if (searchTerm.length > 0) {
+      try {
+        const response = await fetch(
+          // \`https://jsonplaceholder.typicode.com/users?name_like=\${searchTerm}\`
+          \`https://www.omdbapi.com/?apikey=ef5a070&s=\${searchTerm}&type=movie\`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch suggestions");
+        }
+        const data = await response.json();
+        const { Search } = data;
+        setSuggestions(Search);
+      } catch (error) {
+        console.error("Error fetching suggestions:", error);
+        setSuggestions([]);
+      }
+    } else {
+      setSuggestions([]);
+    }
+  };`;
   return (
     <>
-      <div className="flex  mt-8">
+      <div className="flex flex-col  mt-8">
         <div className="flex flex-col w-full mt-8   p-4 relative   bg-[#29292961] rounded-lg border-gray-400 border border-opacity-20">
           <input
             type="text"
@@ -60,7 +94,7 @@ export default function Searchautocomplete() {
             onChange={(e) => setSearchquery(e.target.value)}
           />
 
-          <div className="grid gap-3 grid-cols-4">
+          <div className="grid gap-3 grid-cols-4 mt-6">
             {suggestions.map((movie, index) => {
               return (
                 <div
@@ -89,12 +123,12 @@ export default function Searchautocomplete() {
             {problemSting}
           </SyntaxHighlighter> */}
         </div>
-        {/* <div className="flex mt-8 flex-col gap-5  p-4 relative text-white  bg-[#29292961] rounded-lg border-gray-400 border border-opacity-20">
-          <h2>Solution</h2>
+        <div className="flex mt-8 flex-col gap-5  p-4 relative text-white  bg-[#29292961] rounded-lg border-gray-400 border border-opacity-20">
+          <h2>Code</h2>
           <SyntaxHighlighter language="javascript" style={docco}>
             {codeString}
           </SyntaxHighlighter>
-        </div> */}
+        </div>
       </div>
     </>
   );

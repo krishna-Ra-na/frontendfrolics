@@ -7,6 +7,11 @@ export default function Home() {
             url: 'search-autocomplete',
         },
 
+        {
+            label: 'Infinite Scroll using Debounce',
+            url: 'infinite-scroll',
+        },
+
 
     ];
 
