@@ -32,7 +32,7 @@ export default function Home() {
         },
         {
             label: 'Expenditure Analysis',
-            url: 'expenditureanalysis',
+            url: 'expenditure-analysis',
         },
         {
             label: 'Is Palindrome',
@@ -41,6 +41,10 @@ export default function Home() {
         {
             label: 'Count Vowels',
             url: 'countvowels',
+        },
+        {
+            label: 'Implement Promise all ',
+            url: 'promise-all',
         },
 
     ];
