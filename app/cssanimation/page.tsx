@@ -26,6 +26,10 @@ export default function Home() {
             label: 'Day 6',
             url: 'day-6',
         },
+        {
+            label: 'Day 7',
+            url: 'day-7',
+        },
     ];
 
     return (
